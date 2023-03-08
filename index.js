@@ -1,17 +1,17 @@
-let field = document.getElementById('field');
+
 let message = document.getElementById('message');
-let addBtn = document.getElementById('add')
+let addBtn = document.getElementById('add');
 
-// создать массив в которые будут записываться города 
-const cities = [];
+const words = [];
 
-console.log(cities)
+console.log(words)
 console.log(field.value)
 
-// получить значение с инпута
 function getInputValue(field) {
-    return field.value
+    return field = document.getElementById('field').value
 }
+
+//make toLowerCase function
 
 function clearInput(field) {
     return field.value = "";
@@ -21,32 +21,32 @@ function clearInput(field) {
 //     cities.splice(0,cities.length);
 // }
 
-
 function validateValue() {
-    cities.forEach((city) => {
-        if (city.slice(-1) === field.value[0]) {
-            cities.push(field.value)
-
-        } else if (field.value === city) {
-            console.log(`такое слово уже есть ${city}`)
-            cities.pop(city)
+    words.forEach((word) => {
+        if (word.slice(-1) === field.value[0]) {
+            words.push(field.value)
+        } else if (field.value === word) {
+            console.log(`такое слово уже есть ${word}`)
+            words.pop(word) 
         }
     })
 }
 
 function pushInputValue() {
-
-    if (cities.length === 0) {
-        cities.push(getInputValue(field))
+    if (words.length === 0) {
+        words.push(getInputValue(field))
     } else {
         validateValue()
     }
 
-
-    console.log(cities)
-
-
+    console.log(words)
     clearInput(field)
 }
+function additionWord() {
+     pushInputValue(getInputValue),
+     validateValue(getInputValue),
+     clearInput(getInputValue)
 
-addBtn.addEventListener("click", pushInputValue)
+}
+
+addBtn.addEventListener("click", additionWord)
