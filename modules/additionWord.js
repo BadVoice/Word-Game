@@ -1,5 +1,6 @@
 import { validateWord } from "./validateWord"
 import { clearInput, getInputValue, toLower} from "./someMethods"
+import { displayWords } from "./displayWords";
 
 const words = [];
 
@@ -11,5 +12,6 @@ function pushInputValue() {
     clearInput(field)
 }
 export function additionWord() {
-     pushInputValue(getInputValue)
+     pushInputValue(getInputValue),
+     displayWords(words)
 }

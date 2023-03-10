@@ -14,5 +14,5 @@ export function validateWord(words) {
             words.pop(word) 
         } 
     })
-    console.log(words)
+
 }
